@@ -1,19 +1,31 @@
-/*  Object Oriented Programming Assignment.
-    DT282/2
-    C15423602  Sylvia Siu Wei Wan
+/*  
+  Object Oriented Programming Assignment.
+  DT282/2
+  C15423602  Sylvia Siu Wei Wan
     
 */
+
+// Global variables
+float x, y;
+
+// Constructors
+Donut dnt;
+
 
 
 void setup()
 {
-  size(700, 500);
-  background(0);
-  smooth();
+  size(800, 500);
+  
 }
 
 void draw()
 {
   background(0);
-  ellipse(width/2, height/2, 100, 100);
+  
+  dnt = new Donut();
+  
+  dnt.donut();
+  
+  
 }
