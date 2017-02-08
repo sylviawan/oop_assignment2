@@ -10,7 +10,8 @@ float x, y;
 
 // Constructors
 Donut dnt;
-
+Background bg;
+Coffee cfe;
 
 
 void setup()
@@ -24,8 +25,14 @@ void draw()
   background(0);
   
   dnt = new Donut();
+  bg = new Background();
+  cfe = new Coffee();
   
+  bg.platform();
   dnt.donut();
+  cfe.coffeeOb();
+  
+
   
   
 }
