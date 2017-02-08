@@ -9,8 +9,6 @@ boolean toggled;
 boolean endToggled; 
 
 //Global variables
-PVector pos;
-float rad;
 int colCount = 0; 
 int pcount = 0;
 int collide;

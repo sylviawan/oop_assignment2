@@ -5,7 +5,7 @@ class Obstacles extends Objects implements FallingObjects
   Obstacles(int x, int y ,int z, float s)
   {
     this.z = z;
-    rad = z;
+    r = z;
     pos = new PVector(x, y);
     forward = new PVector(0, s);
   }
@@ -17,7 +17,6 @@ class Obstacles extends Objects implements FallingObjects
 
   void render()
   {
-    
     stroke(0);
     fill(255,0,0);
     pushMatrix();

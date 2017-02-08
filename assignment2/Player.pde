@@ -7,7 +7,7 @@ class Player extends Objects
   {
     pos = new PVector(x, y);
     lives = 10;
-    rad = 30;
+    r = 30;
     points = 0;
 
   }
@@ -16,7 +16,7 @@ class Player extends Objects
   {    
     noStroke();
     fill(50, 15, 230);
-    rect(pos.x, pos.y, rad, rad);
+    rect(pos.x, pos.y, r, r);
   }
 
   void update()
