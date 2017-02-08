@@ -18,7 +18,7 @@ class Obstacles extends Objects implements FallingObjects
   void render()
   {
     //noStroke();
-    stroke(0);
+    stroke(255);
     fill(255,0,0);
     pushMatrix();
     ellipse(pos.x, pos.y, z, z);

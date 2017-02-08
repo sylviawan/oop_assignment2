@@ -15,8 +15,11 @@ class Player extends Objects
   void render()
   {    
     noStroke();
-    fill(50, 15, 230);
+    fill(36, 181, 198);
     rect(pos.x, pos.y, r, r);
+    fill(155, 117, 165);
+    ellipse(pos.x, pos.y, 10, 10);
+    ellipse(pos.x+30, pos.y, 10, 10);
   }
 
   void update()

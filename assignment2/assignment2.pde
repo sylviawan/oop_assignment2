@@ -4,7 +4,17 @@
   DT282/2
   C15423602  Sylvia Siu Wei Wan
     
+    
+  This goal of this game is to simply
+  catch as many wishing stars as you 
+  can without catching fireballs and 
+  losing your life.
+  
 */
+
+import processing.sound.*;
+
+SoundFile file;
 
 boolean toggled; 
 boolean endToggled; 
@@ -14,6 +24,7 @@ int colCount = 0;
 int pcount = 0;
 int collide;
 
+// arrays for da muhfucking stars yo
 float[] x = new float[100];
 float[] y = new float[100];
 float[] speed_1 = new float[100];
@@ -29,6 +40,12 @@ void setup()
 {
   size(1000, 700);
   
+  /*
+  //Attempted to apply sound, didn't work
+  file = new SoundFile(this, "arietta.mp3");
+  //This song is really cute tho
+  file.play();
+  */
   
   toggled = true;
   endToggled = false;
@@ -89,8 +106,8 @@ void draw()
         case 3:
         case 4: 
         case 5:
-          Objects collection = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
-          obj.add(collection);
+          Objects collect = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
+          obj.add(collect);
       }
     }
     
@@ -103,7 +120,7 @@ void draw()
     } 
     
     displayScore();
-    checkCollision();
+    check();
   }
   
   if (endToggled)
@@ -114,8 +131,8 @@ void draw()
 }
 
 
-
-void checkCollision()
+//Check if the person touches the items
+void check()
 {
   for (int i = obj.size () - 1; i >= 0; i --)
   {
@@ -182,15 +199,15 @@ void displayScore()
     if (h instanceof Player)
     {
       fill(255);
-      rect(-2, -2, width + 5, height * 0.1f);
+      rect(-2, -2, width + 5, 100);
       
       //displays the ongoing score
       fill(0);
       stroke(0);
       textFont(font);
-      textSize(30);
-      text("Score= " + ((Player) h).points, 200, 50);
-      text("Lives= " + ((Player) h).lives, 550, 50);
+      textSize(50);
+      text("Score= " + ((Player) h).points, 200, 70);
+      text("Lives= " + ((Player) h).lives, 550, 70);
     }
   }
 }
