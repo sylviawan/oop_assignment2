@@ -9,7 +9,7 @@ class Catch extends Objects implements FallingObjects
     this.s = s;
     pos = new PVector(x, y);
     forward = new PVector(0, s);
-    thetaDir = random(-0.2f, 0.2f);
+    thetaDir = random(-0.3f, 0.3f);
     theta = 0.0f;
     r = 20;
   }
@@ -24,7 +24,7 @@ class Catch extends Objects implements FallingObjects
     fill(255);
     pushMatrix();
     translate(pos.x, pos.y);
-    rotate(frameCount / -100.0);
+    rotate(frameCount/-100.0);
     fill(255);
     star(0, 0, 15, 30, 5); 
     popMatrix();

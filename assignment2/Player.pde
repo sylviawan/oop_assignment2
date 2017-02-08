@@ -7,16 +7,17 @@ class Player extends Objects
   {
     pos = new PVector(x, y);
     lives = 10;
-    r = 30;
     points = 0;
-
+    r = 30;
   }
 
+  // Drawing og the player
   void render()
   {    
     noStroke();
     fill(36, 181, 198);
     rect(pos.x, pos.y, r, r);
+    
     fill(155, 117, 165);
     ellipse(pos.x, pos.y, 10, 10);
     ellipse(pos.x+30, pos.y, 10, 10);
@@ -42,12 +43,12 @@ class Player extends Objects
 
     if (pos.x < 0)
     {
-      pos.x = width / 2;
+      pos.x = width/2;
     }
 
-    if (pos.x > width)
+    if (pos.x>width)
     {
-      pos.x = width / 2;
+      pos.x = width/2;
     }
   }
 }

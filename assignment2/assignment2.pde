@@ -22,7 +22,7 @@ boolean endToggled;
 //Global variables
 int colCount = 0; 
 int pcount = 0;
-int collide;
+int touch;
 
 // arrays for da muhfucking stars yo
 float[] x = new float[100];
@@ -55,7 +55,7 @@ void setup()
 
   speed = 0.6f;
   
-  // Muhfucking stars
+  // Yaaaas Stars
   int c = 0;
   while (c < 100) 
   {  
@@ -95,7 +95,7 @@ void draw()
     //Diplay a new item
     if (frameCount % 60 == 0)
     {
-      switch((int) random(0, 6))
+      switch((int) random(0, 5))
       {
         case 0:
         case 1:
@@ -104,10 +104,10 @@ void draw()
           obj.add(obstacle);
           break;
         case 3:
-        case 4: 
-        case 5:
           Objects collect = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
           obj.add(collect);
+          break;
+          case 4:
       }
     }
     
@@ -131,7 +131,6 @@ void draw()
   //displays the stars
   displayingStars();
   
-
 }
 
 
@@ -151,7 +150,7 @@ void check()
         {
           if (h.pos.dist(other.pos) < h.r + other.r)
           {
-            if (other.pos.y > 510) 
+            if (other.pos.y > 999) 
             {
             } 
             else if (h.pos.x < other.pos.x - 30)
@@ -172,8 +171,7 @@ void check()
         }
       }
       
-     
-      //Check if the player has enough lives 
+      //Check if there is enough lives 
       if (((Player) h).lives == 0)
       {
         endToggled =! endToggled;
@@ -212,7 +210,7 @@ void displayScore()
       stroke(0);
       textFont(font);
       textSize(50);
-      text("Score= " + ((Player) h).points, 200, 70);
+      text("Stars= " + ((Player) h).points, 200, 70);
       text("Lives= " + ((Player) h).lives, 550, 70);
     }
   }
@@ -230,7 +228,7 @@ void endScreen()
       fill(255);
       stroke(255);
       textFont(font);
-      text("Uh oh... game over!", 350, 250);
+      text("Uh oh... game over!", 300, 250);
       text("Score= " + ((Player) h).points, width/2-100, 450);
       textSize(20);
       text("Press  z to return to home", 400, 550);
@@ -246,7 +244,7 @@ void endScreen()
             ((Player) h).lives = 5;
             ((Player) h).points = 0;
             colCount = 0;
-            collide = 5; 
+            touch = 5; 
             speed = 1.0f;
 
         }

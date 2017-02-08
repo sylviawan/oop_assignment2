@@ -8,10 +8,6 @@ abstract class Objects
   PVector pos;
   float r;
 
-  Objects()
-  {
-  }
-
   abstract void render();
   abstract void update();
 }
