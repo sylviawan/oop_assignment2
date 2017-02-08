@@ -91,3 +91,15 @@ void draw()
     endScreen();
   }
 }
+
+
+void homeScreen()
+{
+  
+  textFont(font);
+  textSize(80);
+  text("Catch!", 370, height/2);
+  
+  textSize(20);
+  text("Press SHIFT to start", 400, 550);
+}
