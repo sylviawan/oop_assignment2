@@ -40,18 +40,52 @@ void draw()
     background(230, 190, 225);
     font = loadFont("Geneva-48.vlw");
     
-    //While loop??
-    Obstacles obstacle = new Obstacles((int) round(random(border, width - border - 50)), - 10, (int) round(random(20, 50)), speed);
+    if (toggled)
+  {
+    homeScreen();
+    if (keyPressed)
+    {
+      if (key == CODED)
+      {
+        if (keyCode == SHIFT) 
+        {
+          toggled =! toggled;
+        }
+      }
+    }
+  } 
+  else if (endToggled == false)
+  {
+    //Diplay a new item
+    if (frameCount % 60 == 0)
+    {
+      switch((int) random(0, 6))
+      {
+        case 0:
+        case 1:
+        case 2:
+          Obstacles obstacle = new Obstacles((int) round(random(border, width - border - 50)), - 10, (int) round(random(20, 50)), speed);
           obj.add(obstacle);
-          
+          break;
+        case 3:
+        case 4: 
+        case 5:
           Objects collection = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
           obj.add(collection);
-          
-     // Displays the game
+      }
+    }
+    
+    // Displays the game
     for (int i = obj.size() -1; i>=0; i--)
     {
       Objects go = obj.get(i);
       go.update();
       go.render();
     } 
+  }
+  
+  if (endToggled)
+  {
+    endScreen();
+  }
 }
