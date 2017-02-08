@@ -1,5 +1,7 @@
 class Coffee
 {
+  
+  // Coffee is used as an obsticle for the donut
   void coffeeOb()
   {
     noStroke();

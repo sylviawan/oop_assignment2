@@ -12,7 +12,7 @@ float x, y;
 Donut dnt;
 Background bg;
 Coffee cfe;
-
+StarP str;
 
 void setup()
 {
@@ -27,12 +27,12 @@ void draw()
   dnt = new Donut();
   bg = new Background();
   cfe = new Coffee();
+  str = new StarP();
   
   bg.platform();
   dnt.donut();
-  cfe.coffeeOb();
+  //cfe.coffeeOb();
+  str.starPoint();
   
 
-  
-  
 }
