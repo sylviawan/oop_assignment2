@@ -56,8 +56,6 @@ void draw()
   } 
   else if (endToggled == false)
   {
-    
-    /*
     //Diplay a new item
     if (frameCount % 60 == 0)
     {
@@ -70,10 +68,13 @@ void draw()
           obj.add(obstacle);
           break;
         case 3:
- 
+        case 4: 
+        case 5:
+          Objects collection = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
+          obj.add(collection);
       }
     }
-    */
+    
     // Displays the game
     for (int i = obj.size() -1; i>=0; i--)
     {
@@ -83,7 +84,7 @@ void draw()
     } 
     
     displayScore();
-    checkCollision();
+    check();
   }
   
   if (endToggled)
@@ -92,7 +93,52 @@ void draw()
   }
 }
 
-//Object obj
+//Checks if the person touches or not
+void check()
+{
+  for (int i = obj.size () - 1; i >= 0; i --)
+  {
+    Objects h = obj.get(i);
+    
+    if (h instanceof Player)
+    {
+      for (int j = obj.size () - 1; j >= 0; j --)
+      {
+        Objects other = obj.get(j);
+        if (other instanceof FallingObjects) 
+        {
+          if (h.pos.dist(other.pos) < h.rad + other.rad)
+          {
+            if (other.pos.y > 510) 
+            {
+            } 
+            else if (h.pos.x < other.pos.x - 30)
+            {
+            } 
+            else
+            {
+              ((FallingObjects) other).applyTo((Player)h);
+              colCount++;
+              obj.remove(other);
+
+              if (other instanceof Obstacles)
+              {
+                pcount++;
+              }
+            }
+          }
+        }
+      }
+      
+     
+      //Check if the player has enough lives 
+      if (((Player) h).lives == 0)
+      {
+        endToggled =! endToggled;
+      }
+    }
+  }
+}
 
 void homeScreen()
 {
