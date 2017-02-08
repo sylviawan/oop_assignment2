@@ -12,23 +12,25 @@ boolean endToggled;
 int colCount = 0; 
 int pcount = 0;
 int collide;
+
+
 float border; 
 float speed;
 
-
-//Important
 ArrayList<Objects> obj = new ArrayList<Objects>();
+
 
 void setup()
 {
   size(1000, 700);
-
+  
+  
   toggled = true;
   endToggled = false;
-  
+
   Player person = new Player(260, 500);
   obj.add(person);
-  
+
   speed = 0.6f;
 
 }
@@ -37,10 +39,12 @@ PFont font;
 
 void draw()
 {
-    background(230, 190, 225);
-    font = loadFont("Geneva-48.vlw");
-    
-    if (toggled)
+  
+  background(230, 190, 225);
+  font = loadFont("Geneva-48.vlw");
+
+
+  if (toggled)
   {
     homeScreen();
     if (keyPressed)
@@ -84,7 +88,7 @@ void draw()
     } 
     
     displayScore();
-    check();
+    checkCollision();
   }
   
   if (endToggled)
@@ -93,8 +97,9 @@ void draw()
   }
 }
 
-//Checks if the person touches or not
-void check()
+
+
+void checkCollision()
 {
   for (int i = obj.size () - 1; i >= 0; i --)
   {
@@ -107,7 +112,7 @@ void check()
         Objects other = obj.get(j);
         if (other instanceof FallingObjects) 
         {
-          if (h.pos.dist(other.pos) < h.rad + other.rad)
+          if (h.pos.dist(other.pos) < h.r + other.r)
           {
             if (other.pos.y > 510) 
             {
@@ -139,6 +144,7 @@ void check()
     }
   }
 }
+
 
 void homeScreen()
 {
@@ -173,7 +179,6 @@ void displayScore()
   }
 }
 
-//End of the game when the player has no more lives...like myself
 void endScreen()
 {
   background(117, 184, 227);
