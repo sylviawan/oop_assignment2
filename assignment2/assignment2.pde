@@ -8,8 +8,16 @@
 boolean toggled; 
 boolean endToggled; 
 
+//Global variables
 PVector pos;
 float rad;
+int colCount = 0; 
+int pcount = 0;
+int collide;
+
+
+//Important
+ArrayList<Objects> obj = new ArrayList<Objects>();
 
 void setup()
 {
@@ -28,4 +36,19 @@ void draw()
 {
     background(230, 190, 225);
     font = loadFont("Geneva-48.vlw");
+    
+    //While loop??
+    Obstacles obstacle = new Obstacles((int) round(random(border, width - border - 50)), - 10, (int) round(random(20, 50)), speed);
+          obj.add(obstacle);
+          
+          Objects collection = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
+          obj.add(collection);
+          
+     // Displays the game
+    for (int i = obj.size() -1; i>=0; i--)
+    {
+      Objects go = obj.get(i);
+      go.update();
+      go.render();
+    } 
 }
