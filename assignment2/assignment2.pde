@@ -56,6 +56,8 @@ void draw()
   } 
   else if (endToggled == false)
   {
+    
+    /*
     //Diplay a new item
     if (frameCount % 60 == 0)
     {
@@ -74,7 +76,7 @@ void draw()
           obj.add(collection);
       }
     }
-    
+    */
     // Displays the game
     for (int i = obj.size() -1; i>=0; i--)
     {
