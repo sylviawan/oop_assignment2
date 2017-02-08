@@ -12,9 +12,11 @@
   
 */
 
-import processing.sound.*;
 
-SoundFile file;
+import ddf.minim.*;
+
+AudioPlayer sound;
+Minim minim;
 
 boolean toggled; 
 boolean endToggled; 
@@ -39,11 +41,11 @@ void setup()
 {
   size(1000, 700);
   
-  /*
-  //Attempted to apply sound, didn't work
-  file = new SoundFile(this, "arietta.mp3");
-  //This song is really cute tho -- help
-  file.play();
+  /* I tried
+  minim = new Minim(this);
+  sound = minim.loadFile("arietta.mp3");
+  sound.loop();
+  
   */
   
   toggled = true;
