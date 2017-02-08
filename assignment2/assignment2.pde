@@ -12,6 +12,8 @@ boolean endToggled;
 int colCount = 0; 
 int pcount = 0;
 int collide;
+float border; 
+float speed;
 
 
 //Important
@@ -25,6 +27,9 @@ void setup()
   endToggled = false;
   
   Player person = new Player(260, 500);
+  obj.add(person);
+  
+  speed = 0.6f;
 
 }
 
