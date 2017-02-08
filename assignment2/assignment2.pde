@@ -1,5 +1,5 @@
 /*  
-  Object Oriented Programming Assignment.
+  Object Oriented Programming Assignment 2
   DT282/2
   C15423602  Sylvia Siu Wei Wan
     
@@ -7,7 +7,15 @@
 
 // Global variables
 float x, y;
-float px, py, vx, vy, ax, ay=1;
+
+float speed;
+
+// Key pressed variable
+boolean spacePressed = false;
+
+// Class for objects
+ArrayList<Objects> obj = new ArrayList<Objects>();
+
 
 // Constructors
 Donut dnt;
@@ -18,7 +26,7 @@ StarP str;
 void setup()
 {
   size(800, 500);
-  px=py=110;
+
 }
 
 void draw()
@@ -35,5 +43,4 @@ void draw()
   //cfe.coffeeOb();
   //str.starPoint();
   
-
 }
