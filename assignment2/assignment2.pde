@@ -7,32 +7,40 @@
 
 // Global variables
 float x, y;
+float border;
+float bside;
 
+// Speed of items
 float speed;
 
+// Screens
 boolean screen;
+boolean endScreen;
+
 
 PVector pos;
-
-// Key pressed variable
-boolean spacePressed = false;
 
 ArrayList<Objects> obj = new ArrayList<Objects>();
 
 // Constructors
+
 Player ply;
 Background bg;
-Coffee cfe;
-//StarP str;
+
+StarP str;
 
 void setup()
 {
   size(1000, 700);
   
-  ply = new Player();
+  Player ply = new Player(500,500);
+  obj.add(ply);
 
+  // Set speed ftm
+  speed = 1;
 
   screen = true;
+  endScreen = false;
 }
 
 void draw()
@@ -54,20 +62,52 @@ void draw()
       }
     }
   }
-  else 
-  
-  bg = new Background();
-//  cfe = new Coffee();
+  else if (endScreen == false)
+  {
+    
+    //FOR EVERY 60 SECOND DISPLAY NEW OBJECT
+    if (frameCount % 60 == 0)
+    {
+      switch((int) random(0, 4))
+      {
+      case 0:
+      case 1:
+      case 2:
+        Obstacles obstacle = new Obstacles((int) round(random(border, width-border-70)), - 15, (int) round(random(20, 70)), speed);
+        obj.add(obstacle);
+        break;
+      case 3:
+        Objects collection = new StarP((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
+        obj.add(collection);
+      }
+    }
+    
+    //DISPLAYING THE GAME --------------------------------------------------------------
+    for (int i = obj.size () - 1; i >= 0; i--)
+    {
+      Objects go = obj.get(i);
+      go.update();
+      go.render();
+    } 
+    //displayGameInfo();
+
+    //COLLISION RELATED CODE ---------------------------------------------------------
+    //checkCollision();
+    
+
+  //bg = new Background();
 //  str = new StarP();
   
   //bg.platform();
-  ply.player(500, 550);
-  //cfe.coffeeOb();
+
   //str.starPoint();
   
 }
 
 void homeScreen()
+{
+  
+}
 {
   background(0);
 }
