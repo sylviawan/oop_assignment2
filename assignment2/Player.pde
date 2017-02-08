@@ -1,20 +1,18 @@
-class Donut
+class Player
 {
 
   int lives;
   int points;
 
-  // Donut yaaas
-  void donut(int x, int y)
+  void player(int x, int y)
   { 
     pos = new PVector(x, y);
     points = 0;
-    
+    render();
+
     
   }
   
-
-
   void render()
   { 
 
@@ -22,14 +20,7 @@ class Donut
     noStroke();
     ellipse(pos.x, pos.y, 80, 80);
     
-    fill(0);
-    noStroke();
-    ellipse(pos.x, pos.y, 30, 30);
     
-  }
-
-  void update()
-  {
     if (keyPressed)
     {
       if (key == CODED)
@@ -46,7 +37,7 @@ class Donut
     }//end key pressed
 
 
-    //if human reaches the edge of the screen they are 
+    //if reaches the edge of the screen they are 
     //returned to the starting point on the screen
     if (pos.x < 0)
     {
@@ -57,6 +48,10 @@ class Donut
     {
       pos.x = width / 2;
     }
+  }
+
+  void update()
+  {
   }//end update
 
 }

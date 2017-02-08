@@ -17,7 +17,7 @@ boolean spacePressed = false;
 
 
 // Constructors
-Donut dnt;
+Player ply;
 Background bg;
 Coffee cfe;
 StarP str;
@@ -32,13 +32,13 @@ void draw()
 {
   background(0);
   
-  dnt = new Donut();
+  ply = new Player();
   bg = new Background();
   cfe = new Coffee();
   str = new StarP();
   
   bg.platform();
-  dnt.donut(130, 400);
+  ply.player(130, 400);
   //cfe.coffeeOb();
   //str.starPoint();
   
