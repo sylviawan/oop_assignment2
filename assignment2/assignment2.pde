@@ -43,7 +43,7 @@ void setup()
   /*
   //Attempted to apply sound, didn't work
   file = new SoundFile(this, "arietta.mp3");
-  //This song is really cute tho
+  //This song is really cute tho -- help
   file.play();
   */
   
@@ -127,7 +127,11 @@ void draw()
   {
     endScreen();
   }
+  
+  //displays the stars
   displayingStars();
+  
+
 }
 
 
@@ -181,7 +185,9 @@ void check()
 
 void homeScreen()
 {
-  
+  //displays the character
+  character();
+  stroke(255);
   textFont(font);
   textSize(80);
   text("Catch!", 370, height/2);
@@ -266,4 +272,14 @@ private void displayingStars()
     }
     c = c + 1;
   }
+}
+
+void character()
+{
+  noStroke();
+  fill(36, 181, 198);
+  rect(150, 300, 100, 100);
+  fill(155, 117, 165);
+  ellipse(150, 300, 50, 50);
+  ellipse(250, 300, 50, 50);
 }
