@@ -14,9 +14,9 @@ class Catch extends Objects implements FallingObjects
     r = 20;
   }
 
-  void applyTo(Player person)
+  void applyTo(Player chibi)
   {
-    person.points++;
+    chibi.points++;
   }
 
   void render()

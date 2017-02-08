@@ -1,4 +1,4 @@
 interface FallingObjects
 {
-  void applyTo(Player person);
+  void applyTo(Player chibi);
 }

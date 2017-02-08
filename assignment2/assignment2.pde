@@ -24,7 +24,7 @@ int colCount = 0;
 int pcount = 0;
 int touch;
 
-// arrays for da muhfucking stars yo
+// arrays for the stars
 float[] x = new float[100];
 float[] y = new float[100];
 float[] speed_1 = new float[100];
@@ -50,8 +50,8 @@ void setup()
   toggled = true;
   endToggled = false;
 
-  Player person = new Player(260, 500);
-  obj.add(person);
+  Player chibi = new Player(260, 500);
+  obj.add(chibi);
 
   speed = 0.6f;
   
@@ -134,7 +134,7 @@ void draw()
 }
 
 
-//Check if the person touches the items
+//Check if the chibi touches the items
 void check()
 {
   for (int i = obj.size () - 1; i >= 0; i --)

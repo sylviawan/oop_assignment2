@@ -10,15 +10,16 @@ class Obstacles extends Objects implements FallingObjects
     forward = new PVector(0, s);
   }
 
-  void applyTo(Player person)
+  void applyTo(Player chibi)
   {
-    person.lives--;
+    chibi.lives--;
   }
 
   void render()
   {
     stroke(255);
     fill(255,0,0);
+    
     pushMatrix();
     ellipse(pos.x, pos.y, z, z);
     popMatrix();

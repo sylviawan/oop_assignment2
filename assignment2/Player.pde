@@ -11,7 +11,7 @@ class Player extends Objects
     r = 30;
   }
 
-  // Drawing og the player
+  // Drawing the player
   void render()
   {    
     noStroke();
@@ -31,16 +31,15 @@ class Player extends Objects
       {
         if (keyCode == LEFT )
         {
-          pos.x -= 8;
+          pos.x-=8;
         }
         if (keyCode == RIGHT)
         {
-          pos.x += 8;
+          pos.x+=8;
         }
       }
     }
-
-
+    
     if (pos.x < 0)
     {
       pos.x = 1000;
