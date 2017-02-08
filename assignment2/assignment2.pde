@@ -35,7 +35,6 @@ float speed;
 
 ArrayList<Objects> obj = new ArrayList<Objects>();
 
-
 void setup()
 {
   size(1000, 700);
@@ -81,13 +80,11 @@ void draw()
     homeScreen();
     if (keyPressed)
     {
-      if (key == CODED)
-      {
-        if (keyCode == SHIFT) 
-        {
-          toggled =! toggled;
-        }
-      }
+       if (key == ' ') 
+       {
+         toggled =! toggled;
+       }
+      
     }
   } 
   else if (endToggled == false)
@@ -134,7 +131,7 @@ void draw()
 }
 
 
-//Check if the chibi touches the items
+//Check if the player touches the items
 void check()
 {
   for (int i = obj.size () - 1; i >= 0; i --)
@@ -191,7 +188,7 @@ void homeScreen()
   text("Catch!", 370, height/2);
   
   textSize(20);
-  text("Press SHIFT to start", 400, 550);
+  text("Press SPACE bar to start", 400, 550);
 }
 
 void displayScore()
