@@ -10,11 +10,10 @@ float x, y;
 
 float speed;
 
+PVector pos;
+
 // Key pressed variable
 boolean spacePressed = false;
-
-// Class for objects
-ArrayList<Objects> obj = new ArrayList<Objects>();
 
 
 // Constructors
@@ -25,7 +24,7 @@ StarP str;
 
 void setup()
 {
-  size(800, 500);
+  size(1000, 700);
 
 }
 
@@ -39,7 +38,7 @@ void draw()
   str = new StarP();
   
   bg.platform();
-  dnt.donut();
+  dnt.donut(130, 400);
   //cfe.coffeeOb();
   //str.starPoint();
   
