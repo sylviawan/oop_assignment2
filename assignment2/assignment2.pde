@@ -142,7 +142,25 @@ void endScreen()
       textFont(font);
       text("Uh oh... game over!", 350, 250);
       text("Score= " + ((Player) h).points, width/2-100, 450);
+      textSize(20);
+      text("Press  z to return to home", 400, 550);
 
+    //If the user wants to replay the game
+      if (keyPressed)
+      {
+        if (key == 'z')
+        {
+
+            endToggled = !endToggled;
+            toggled =! toggled;
+            ((Player) h).lives = 5;
+            ((Player) h).points = 0;
+            colCount = 0;
+            collide = 5; 
+            speed = 1.0f;
+
+        }
+      }
     }
   }
 }
