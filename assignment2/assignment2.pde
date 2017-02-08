@@ -126,3 +126,23 @@ void displayScore()
     }
   }
 }
+
+//End of the game when the player has no more lives...like myself
+void endScreen()
+{
+  background(117, 184, 227);
+  for (int i = obj.size () - 1; i >= 0; i --)
+  {
+    Objects h = obj.get(i);
+    if (h instanceof Player)
+    {
+      textSize(26);
+      fill(255);
+      stroke(255);
+      textFont(font);
+      text("Uh oh... game over!", 350, 250);
+      text("Score= " + ((Player) h).points, width/2-100, 450);
+
+    }
+  }
+}
