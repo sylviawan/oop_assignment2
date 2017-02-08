@@ -1,4 +1,5 @@
 /*  
+
   Object Oriented Programming Assignment 2
   DT282/2
   C15423602  Sylvia Siu Wei Wan
@@ -12,6 +13,10 @@ boolean endToggled;
 int colCount = 0; 
 int pcount = 0;
 int collide;
+
+float[] x = new float[100];
+float[] y = new float[100];
+float[] speed_1 = new float[100];
 
 
 float border; 
@@ -32,6 +37,16 @@ void setup()
   obj.add(person);
 
   speed = 0.6f;
+  
+  // Muhfucking stars
+  int c = 0;
+  while (c < 100) 
+  {  
+    x[c] = random(0, width);
+    y[c] = random(0, height);
+    speed_1[c] = random(1, 3);
+    c = c + 1;
+  }
 
 }
 
@@ -95,6 +110,7 @@ void draw()
   {
     endScreen();
   }
+  displayingStars();
 }
 
 
@@ -173,7 +189,7 @@ void displayScore()
       stroke(0);
       textFont(font);
       textSize(30);
-      text("Points= " + ((Player) h).points, 200, 50);
+      text("Score= " + ((Player) h).points, 200, 50);
       text("Lives= " + ((Player) h).lives, 550, 50);
     }
   }
@@ -213,5 +229,24 @@ void endScreen()
         }
       }
     }
+  }
+}
+
+private void displayingStars()
+{
+  stroke(255);
+  strokeWeight(2);
+
+  int c = 0;
+  while (c < 100)
+  {
+    point(x[c], y[c]);
+
+    x[c] = x[c] - speed_1[c];
+    if (x[c] < 0)
+    {
+      x[c] = width;
+    }
+    c = c + 1;
   }
 }
