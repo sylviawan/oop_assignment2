@@ -1,7 +1,6 @@
 class Catch extends Objects implements FallingObjects
 {
-  float theta; 
-  float thetaInc; 
+  float theta;  
   float thetaDir;
 
   Catch(int x, int y, float s)
