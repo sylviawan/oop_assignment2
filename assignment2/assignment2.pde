@@ -1,3 +1,4 @@
+
 /*  
 
   Object Oriented Programming Assignment 2
@@ -12,8 +13,13 @@
   
 */
 
-
 import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 
 AudioPlayer sound;
 Minim minim;
@@ -40,13 +46,12 @@ ArrayList<Objects> obj = new ArrayList<Objects>();
 void setup()
 {
   size(1000, 700);
-  
-  /* I tried
+
+  /* I really tried
   minim = new Minim(this);
   sound = minim.loadFile("arietta.mp3");
   sound.loop();
-  
-  */
+*/
   
   toggled = true;
   endToggled = false;

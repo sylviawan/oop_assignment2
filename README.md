@@ -15,5 +15,3 @@ Once you’ve wasted all go your lives, you can view your score at the end. You 
 
 
 YouTube: https://youtu.be/7EQpm0CT84I
-
-**Had trouble importing sound into the program
