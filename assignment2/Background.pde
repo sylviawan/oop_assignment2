@@ -7,9 +7,4 @@ class Background
     rect(0, 445, 800, 40);
     
   }
-  
-  
-  
-  
-  
 }

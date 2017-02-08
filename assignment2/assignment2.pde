@@ -7,6 +7,7 @@
 
 // Global variables
 float x, y;
+float px, py, vx, vy, ax, ay=1;
 
 // Constructors
 Donut dnt;
@@ -17,7 +18,7 @@ StarP str;
 void setup()
 {
   size(800, 500);
-  
+  px=py=110;
 }
 
 void draw()
@@ -32,7 +33,7 @@ void draw()
   bg.platform();
   dnt.donut();
   //cfe.coffeeOb();
-  str.starPoint();
+  //str.starPoint();
   
 
 }
