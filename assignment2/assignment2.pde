@@ -100,7 +100,7 @@ void draw()
         case 0:
         case 1:
         case 2:
-          Obstacles obstacle = new Obstacles((int) round(random(border, width - border - 50)), - 10, (int) round(random(20, 50)), speed);
+          Obstacles obstacle = new Obstacles((int) round(random(border, width - border)), - 10, (int) round(random(20, 50)), speed);
           obj.add(obstacle);
           break;
         case 3:
@@ -112,7 +112,7 @@ void draw()
     }
     
     // Displays the game
-    for (int i = obj.size() -1; i>=0; i--)
+    for (int i = obj.size()-1; i>=0; i--)
     {
       Objects go = obj.get(i);
       go.update();

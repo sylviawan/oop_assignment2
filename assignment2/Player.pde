@@ -43,12 +43,12 @@ class Player extends Objects
 
     if (pos.x < 0)
     {
-      pos.x = width/2;
+      pos.x = 1000;
     }
 
     if (pos.x>width)
     {
-      pos.x = width/2;
+      pos.x = 0;
     }
   }
 }
