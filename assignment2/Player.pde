@@ -1,4 +1,4 @@
-class Player
+class Player extends Objects
 {  
   int lives;
   int points;
@@ -27,14 +27,14 @@ class Player
       {
         if (keyCode == LEFT )
         {
-          pos.x -= 10;
+          pos.x -= 8;
         }
         if (keyCode == RIGHT)
         {
-          pos.x += 10;
+          pos.x += 8;
         }
-      }//end key == coded
-    }//end key pressed
+      }
+    }
 
 
     if (pos.x < 0)
@@ -46,5 +46,5 @@ class Player
     {
       pos.x = width / 2;
     }
-  }//end update
+  }
 }

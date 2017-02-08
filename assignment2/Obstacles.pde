@@ -1,4 +1,4 @@
-class Obstacles extends Objects
+class Obstacles extends Objects implements FallingObjects
 {
   int z;
 
@@ -17,7 +17,7 @@ class Obstacles extends Objects
 
   void render()
   {
-    //noStroke();
+    
     stroke(0);
     fill(255,0,0);
     pushMatrix();
