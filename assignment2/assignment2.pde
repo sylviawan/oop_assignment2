@@ -70,10 +70,7 @@ void draw()
           obj.add(obstacle);
           break;
         case 3:
-        case 4: 
-        case 5:
-          Objects collection = new Catch((int) round(random(border, width - border)), - 15, random(1.0f, 4.0f));
-          obj.add(collection);
+ 
       }
     }
     */
@@ -84,6 +81,9 @@ void draw()
       go.update();
       go.render();
     } 
+    
+    displayScore();
+    checkCollision();
   }
   
   if (endToggled)
@@ -92,6 +92,7 @@ void draw()
   }
 }
 
+//Object obj
 
 void homeScreen()
 {
@@ -102,4 +103,26 @@ void homeScreen()
   
   textSize(20);
   text("Press SHIFT to start", 400, 550);
+}
+
+void displayScore()
+{
+  for (int i = obj.size()-1; i>=0; i--)
+  {
+    Objects h = obj.get(i);
+    
+    if (h instanceof Player)
+    {
+      fill(255);
+      rect(-2, -2, width + 5, height * 0.1f);
+      
+      //displays the ongoing score
+      fill(0);
+      stroke(0);
+      textFont(font);
+      textSize(30);
+      text("Points= " + ((Player) h).points, 200, 50);
+      text("Lives= " + ((Player) h).lives, 550, 50);
+    }
+  }
 }
